@@ -8,6 +8,8 @@
 \paperwidth = 11in
 \geometry{top=.6in,left=.4in,right=.4in,bottom=.5in}
 
+\usepackage{framed}
+
 % Headers
 \usepackage{fancyhdr}
 \fancyhf{}
@@ -71,6 +73,25 @@ $endif$
 \end{center}
 
 \newlength{\len}
+
+$if(classified.by)$
+$if(classified.reason)$
+$if(classified.until)$
+\begin{framed}
+\textbf{Classified By:} $classified.by$ \par
+\textbf{Reason:} $classified.reason$ \par
+
+$if(classified.downgrade)$
+\textbf{Downgrade To:} $classified.downgrade$ \par
+$endif$
+
+\textbf{Declassify On:} $classified.until$ \par
+
+\end{framed}
+$endif$
+$endif$
+$endif$
+
 
 $body$
 
