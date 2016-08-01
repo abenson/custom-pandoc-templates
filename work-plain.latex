@@ -13,7 +13,7 @@ $endif$
 \usepackage{fixltx2e} % provides \textsubscript
 
 \usepackage{framed}
-\usepackage[cm]{fullpage}
+\usepackage[margin=0.75in]{geometry}
 \usepackage{fancyhdr}
 \fancyhf{}
 \pagestyle{fancy}
