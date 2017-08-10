@@ -179,19 +179,22 @@ $endif$
 
 $if(classified.by)$
 $if(classified.reason)$
-$if(classified.until)$
 \begin{framed}
 \textbf{Classified By:} $classified.by$ \par
+$if(classified.reviewer)$
+\textbf{Reviewed By:} $classified.reviewer$ \par
+$endif$
 \textbf{Reason:} $classified.reason$ \par
 
 $if(classified.downgrade)$
 \textbf{Downgrade To:} $classified.downgrade$ \par
 $endif$
 
+$if(classified.until)$
 \textbf{Declassify On:} $classified.until$ \par
+$endif$
 
 \end{framed}
-$endif$
 $endif$
 $endif$
 
