@@ -1,0 +1,21 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage{ifpdf}
+\usepackage{mla}
+\usepackage{newtxtext}
+
+% Command required by how Pandoc handles the list conversion
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{hyperref}
+\hypersetup{%
+  pdfauthor={$author.last$, $author.first$},
+  pdftitle={$title$}
+}
+
+\begin{document}
+\begin{mla}{$author.first$}{$author.last$}{$professor$}{$course$}{$date$}{$title$}
+$body$
+\end{mla}
+\end{document}
