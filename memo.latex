@@ -1,0 +1,27 @@
+\documentclass[[$if(fontsize)$$fontsize$,$endif$letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+
+% Command required by how Pandoc handles the list conversion
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{hyperref}
+\hypersetup{%
+  pdfauthor={$author.last$, $author.first$},
+  pdftitle={$title$}
+}
+
+\begin{document}
+
+\begin{center}
+DEPARTMENT OF THE AIR FORCE \\
+HEADQUARTERS UNITED STATES AIR FORCE
+\end{center}
+
+\begin{flushright}
+$date$
+\end{flushright}
+
+$body$
+\end{document}

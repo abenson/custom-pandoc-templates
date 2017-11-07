@@ -6,6 +6,7 @@
 \usepackage{fixltx2e} % provides \textsubscript
 \usepackage{framed}
 \usepackage{color}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{fancyhdr}
 \fancyhf{}
 \pagestyle{fancy}
@@ -152,8 +153,8 @@ $if(classified.color)$
 \lhead{\textbf{\textcolor{$classified.color$}{$classified.overall$}}}
 \rfoot{\textbf{\textcolor{$classified.color$}{$classified.overall$}}}
 $else$
-\lhead{$classified.overall$}
-\rfoot{$classified.overall$}
+\lhead{\textbf{$classified.overall$}}
+\rfoot{\textbf{$classified.overall$}}
 $endif$
 $endif$
 \rhead{}
@@ -171,7 +172,12 @@ $endif$
 
 $if(classified.overall)$
 \begin{center}
-Overall classification is \\ \textbf{$classified.overall$}
+Overall classification is \\
+$if(classified.color)$
+\textcolor{$classified.color$}{\textbf{$classified.overall$}}
+$else$
+\textbf{$classified.overall$}
+$endif$
 \end{center}
 $endif$
 

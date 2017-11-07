@@ -11,7 +11,8 @@ $endif$
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
-
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{framed}
 \usepackage[margin=0.75in]{geometry}
 \usepackage{fancyhdr}
@@ -154,8 +155,13 @@ $header-includes$
 $endfor$
 
 $if(classified)$
+$if(classified.color)$
+\lhead{\textcolor{$classified.color$}{$classified.overall$}}
+\rfoot{\textcolor{$classified.color$}{$classified.overall$}}
+$else$
 \lhead{$classified.overall$}
 \rfoot{$classified.overall$}
+$endif$
 $endif$
 \rhead{Page \thepage}
 
