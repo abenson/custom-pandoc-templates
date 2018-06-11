@@ -47,7 +47,7 @@ $endif$
 $if(geometry)$
 \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 $else$
-\usepackage[includeheadfoot,margin=1in]{geometry}
+\usepackage[includeheadfoot,left=1in,right=1in,top=0.5in,bottom=0.5in]{geometry}
 $endif$
 $if(natbib)$
 \usepackage{natbib}
