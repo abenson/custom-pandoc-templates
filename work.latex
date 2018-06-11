@@ -1,4 +1,4 @@
-\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{scrartcl}
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$else$letterpaper,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{scrartcl}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
@@ -9,7 +9,6 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage{fancyhdr}
 \fancyhf{}
-\pagestyle{fancy}
 \renewcommand*{\titlepagestyle}{empty}
 \renewcommand{\footrulewidth}{0.4pt}% default is 0pt
 \providecommand{\tightlist}{%
@@ -48,7 +47,7 @@ $endif$
 $if(geometry)$
 \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 $else$
-\usepackage[margin=1.25in]{geometry}
+\usepackage[includeheadfoot,margin=1in]{geometry}
 $endif$
 $if(natbib)$
 \usepackage{natbib}
@@ -158,6 +157,9 @@ $else$
 $endif$
 $endif$
 \rhead{}
+\renewcommand{\headrulewidth}{1.0pt}
+\renewcommand{\footrulewidth}{1.0pt}
+\pagestyle{fancy}
 
 \begin{document}
 $if(title)$
