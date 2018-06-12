@@ -207,6 +207,14 @@ $if(classified.until)$
 \textbf{Declassify On:} $classified.until$ \par
 $endif$
 
+$if(classified.upgradedto)$
+\textbf{Upgraded To:} $classified.downgrade$ \par
+$endif$
+
+$if(classified.upgradedby)$
+\textbf{Upgraded By:} $classified.downgrade$ \par
+$endif$
+
 \end{framed}
 $endif$
 
