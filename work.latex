@@ -186,13 +186,18 @@ $endif$
 
 
 $if(classified.by)$
-$if(classified.reason)$
 \begin{framed}
 \textbf{Classified By:} $classified.by$ \par
 $if(classified.reviewer)$
 \textbf{Reviewed By:} $classified.reviewer$ \par
 $endif$
+$if(classified.reason)$
 \textbf{Reason:} $classified.reason$ \par
+$endif$
+
+$if(classified.source)$
+\textbf{Derived From:} $classified.source$ \par
+$endif$
 
 $if(classified.downgrade)$
 \textbf{Downgrade To:} $classified.downgrade$ \par
@@ -203,7 +208,6 @@ $if(classified.until)$
 $endif$
 
 \end{framed}
-$endif$
 $endif$
 
 $for(include-before)$
