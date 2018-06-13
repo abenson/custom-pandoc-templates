@@ -171,7 +171,11 @@ $if(version)$
 Version $version$
 \end{center}
 $endif$
-
+$if(note)$
+\begin{center}
+\textbf{Note:} $note$
+\end{center}
+$endif$
 $if(classified.overall)$
 \begin{center}
 Overall classification is \\
