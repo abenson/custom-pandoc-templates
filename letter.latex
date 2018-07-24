@@ -1,0 +1,33 @@
+\documentclass{letter}
+\usepackage{hyperref}
+\signature{$from.name$}
+\address{$from.line1$ \\ $if(from.line2)$$from.line2$ \\ $endif$ $from.city$, $from.state$ $from.postal$}
+\begin{document}
+
+\begin{letter}{$to.name$ \\ $to.line1$ \\ $if(to.line2)$ $to.line2$ \\ $endif$ $to.city$, $to.state$ $to.postal$}
+$if(opening)$
+\opening{$opening$}
+$else$
+\opening{Dear Sir or Madam:}
+$endif$
+
+$body$
+
+$if(closing)$
+\closing{$closing$}
+$else$
+\closing{Very respectfully,}
+$endif$
+
+$if(postscript)$
+\ps
+
+P.S. $postscript$
+$endif$
+
+$if(enclosures)$
+$for(enclosures)$\encl{$enclosures$}$sep$$endfor$
+$endif$
+
+\end{letter}
+\end{document}
