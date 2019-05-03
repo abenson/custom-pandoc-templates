@@ -175,6 +175,10 @@ $abstract$
 \end{abstract}
 $endif$
 
+$if(version)$
+\center{$version$}
+$endif$
+
 $if(classified.by)$
 $if(classified.reason)$
 \begin{framed}
