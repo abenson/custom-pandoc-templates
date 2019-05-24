@@ -1,4 +1,4 @@
-\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{scrartcl}
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$else$letterpaper,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{scrartcl}
 $if(fontfamily)$
 \usepackage{$fontfamily$}
 $else$
