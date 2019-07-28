@@ -14,7 +14,7 @@ $endif$
 \usepackage{color}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{framed}
-\usepackage[margin=0.75in]{geometry}
+\usepackage[includeheadfoot,left=0.75in,right=0.75in,top=0.25in,bottom=0.25in]{geometry}
 \usepackage{fancyhdr}
 \fancyhf{}
 \pagestyle{fancy}
