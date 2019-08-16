@@ -8,6 +8,8 @@
 \usepackage{color}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{fancyhdr}
+\usepackage{float}
+\floatplacement{figure}{H}
 \fancyhf{}
 \renewcommand*{\titlepagestyle}{empty}
 \renewcommand{\footrulewidth}{0.4pt}% default is 0pt

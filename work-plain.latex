@@ -16,6 +16,8 @@ $endif$
 \usepackage{framed}
 \usepackage[includeheadfoot,left=0.75in,right=0.75in,top=0.25in,bottom=0.25in]{geometry}
 \usepackage{fancyhdr}
+\usepackage{float}
+\floatplacement{figure}{H}
 \fancyhf{}
 \pagestyle{fancy}
 \renewcommand*{\titlepagestyle}{fancy}
