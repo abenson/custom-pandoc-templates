@@ -193,7 +193,9 @@ $abstract$
 $endif$
 
 $if(version)$
-\center{$version$}
+\begin{center}
+$version$
+\end{center}
 $endif$
 
 $if(classified.by)$
