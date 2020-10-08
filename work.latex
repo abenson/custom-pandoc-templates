@@ -283,8 +283,12 @@ $if(classified.source)$
 \textbf{Derived From:} $classified.source$ \par
 $endif$
 
-$if(classified.downgrade)$
-\textbf{Downgrade To:} $classified.downgrade$ \par
+$if(classified.downgradeto)$
+\textbf{Downgrade To:} $classified.downgradeto$ \par
+$endif$
+
+$if(classified.downgradeon)$
+\textbf{Downgrade On:} $classified.downgradeon$ \par
 $endif$
 
 $if(classified.until)$
