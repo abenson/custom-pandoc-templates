@@ -252,7 +252,7 @@ $endif$
 $if(cui.dissemination)$
 \textbf{Dissemination Control:} $cui.dissemination$ \par
 $else$
-\textbf{Dissemination Control:} N/A \par
+\textbf{Dissemination Control:} NONE \par
 $endif$
 \textbf{POC:} $cui.poc$ \par
 \end{framed}
