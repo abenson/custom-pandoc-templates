@@ -151,15 +151,6 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
-$if(title)$
-\title{$title$}
-$endif$
-$if(subtitle)$
-\subtitle{$subtitle$}
-$endif$
-\author{$for(author)$$author$$sep$ \and $endfor$}
-\date{$date$}
-
 $if(classified)$
 $if(classified.color)$
 \lhead{\textbf{\textcolor{$classified.color$}{$classified.overall$}}}
@@ -178,6 +169,8 @@ $endif$
 
 \usepackage{chngcntr}
 
+\usepackage{titling}
+
 \counterwithin{figure}{section}
 \renewcommand{\thefigure}{\arabic{section}-\arabic{figure}}
 
@@ -185,21 +178,54 @@ $endif$
 \renewcommand{\thetable}{\arabic{section}-\arabic{table}}
 
 \begin{document}
-$if(title)$
-\maketitle
+
+\begin{titlepage}
+\begin{center}
+
+$if(classified)$
+$if(classified.titlecolor)$
+\textbf{\textcolor{$classified.titlecolor$}{$classified.title$}}
+$else$
+\textbf{$classified.title$}
+$endif$
 $endif$
 
 $if(logo)$
-\begin{center}
-		\includegraphics[width=\linewidth]{$logo$}
-\end{center}
+\vskip 0in
+$else$
+\vskip 0.5in
 $endif$
+
+\Huge{$title$}
+
+\Large{$subtitle$}
+
+\vskip 0.25in
+
+$for(author)$
+\emph{$author$} \par
+$endfor$
+
+\vskip 0.25in
+
+$date$
+
+\vskip 0.25in
+
+\end{center}
 
 $if(version)$
 \begin{center}
 Version $version$
 \end{center}
 $endif$
+
+\begin{center}
+$for(logo)$
+\includegraphics[height=2in]{$logo$}
+$endfor$
+\end{center}
+
 $if(note)$
 \begin{center}
 \textbf{Note:} $note$
@@ -209,12 +235,14 @@ $if(classified.overall)$
 \begin{center}
 Overall classification is \\
 $if(classified.color)$
-\textcolor{$classified.color$}{\textbf{$classified.overall$}}
+\Large{\textcolor{$classified.color$}{\textbf{$classified.overall$}}}
 $else$
-\textbf{$classified.overall$}
+\Large{\textbf{$classified.overall$}}
 $endif$
 \end{center}
 $endif$
+
+\vskip 0.25in
 
 \begin{footnotesize}
 \begin{multicols}{2}
@@ -276,7 +304,21 @@ $endif$
 \end{multicols}
 \end{footnotesize}
 
+\vfill
+
+\begin{center}
+$if(classified)$
+$if(classified.titlecolor)$
+\textbf{\textcolor{$classified.titlecolor$}{$classified.title$}}
+$else$
+\textbf{$classified.title$}
+$endif$
+$endif$
+\end{center}
+\end{titlepage}
+
 $for(include-before)$
+\newpage
 $include-before$
 
 $endfor$
