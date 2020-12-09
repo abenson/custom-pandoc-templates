@@ -176,6 +176,14 @@ $endif$
 
 \usepackage{multicol}
 
+\usepackage{chngcntr}
+
+\counterwithin{figure}{section}
+\renewcommand{\thefigure}{\arabic{section}-\arabic{figure}}
+
+\counterwithin{table}{section}
+\renewcommand{\thetable}{\arabic{section}-\arabic{table}}
+
 \begin{document}
 $if(title)$
 \maketitle
