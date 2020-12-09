@@ -182,6 +182,8 @@ $endif$
 $endif$
 \rhead{Page \thepage}
 
+\usepackage{multicol}
+
 \begin{document}
 $if(title)$
 \maketitle
@@ -198,14 +200,22 @@ $version$
 \end{center}
 $endif$
 
+\begin{footnotesize}
+\begin{multicols}{2}
+% OCA/DCA Block
 $if(classified.by)$
-$if(classified.reason)$
 \begin{framed}
 \textbf{Classified By:} $classified.by$ \par
 $if(classified.reviewer)$
 \textbf{Reviewed By:} $classified.reviewer$ \par
 $endif$
+$if(classified.reason)$
 \textbf{Reason:} $classified.reason$ \par
+$endif$
+
+$if(classified.source)$
+\textbf{Derived From:} $classified.source$ \par
+$endif$
 
 $if(classified.downgrade)$
 \textbf{Downgrade To:} $classified.downgrade$ \par
@@ -215,9 +225,40 @@ $if(classified.until)$
 \textbf{Declassify On:} $classified.until$ \par
 $endif$
 
+$if(classified.upgradedto)$
+\textbf{Upgraded To:} $classified.downgrade$ \par
+$endif$
+
+$if(classified.upgradedby)$
+\textbf{Upgraded By:} $classified.downgrade$ \par
+$endif$
+
+\end{framed}
+$else$
+\hfill
+$endif$
+
+% CUI Block
+
+$if(cui)$
+\begin{framed}
+\textbf{Controlled By:} $cui.component$ \par
+\textbf{Controlled By:} $cui.office$ \par
+$if(cui.categories)$
+\textbf{CUI Categories:} $cui.categories$ \par
+$else$
+\textbf{CUI Categories:} N/A \par
+$endif$
+$if(cui.dissemination)$
+\textbf{Dissemination Control:} $cui.dissemination$ \par
+$else$
+\textbf{Dissemination Control:} N/A \par
+$endif$
+\textbf{POC:} $cui.poc$ \par
 \end{framed}
 $endif$
-$endif$
+\end{multicols}
+\end{footnotesize}
 
 $for(include-before)$
 $include-before$
